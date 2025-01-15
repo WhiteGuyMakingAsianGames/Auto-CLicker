@@ -1,24 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Auto Clicker</title>
-</head>
-<body>
-    <button id="startButton">Start Auto-Clicker</button>
-    <button id="stopButton">Stop Auto-Clicker</button>
-
-    <script>
-        let intervalId;
-
-        document.getElementById("startButton").onclick = function() {
-            intervalId = setInterval(function() {
-                document.body.click();
-            }, 100); // Interval in milliseconds
-        };
-
-        document.getElementById("stopButton").onclick = function() {
-            clearInterval(intervalId);
-        };
-    </script>
-</body>
-</html>
+{
+  "manifest_version": 3,
+  "name": "Auto Clicker",
+  "version": "1.0",
+  "description": "A simple auto clicker extension",
+  "permissions": ["activeTab", "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
