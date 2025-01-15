@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Auto Clicker</title>
+</head>
+<body>
+    <button id="startButton">Start Auto-Clicker</button>
+    <button id="stopButton">Stop Auto-Clicker</button>
+
+    <script>
+        let intervalId;
+
+        document.getElementById("startButton").onclick = function() {
+            intervalId = setInterval(function() {
+                document.body.click();
+            }, 100); // Interval in milliseconds
+        };
+
+        document.getElementById("stopButton").onclick = function() {
+            clearInterval(intervalId);
+        };
+    </script>
+</body>
+</html>
