@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Auto Clicker</title>
+  <style>
+    body {
+      width: 200px;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <button id="startButton">Start Auto-Clicker</button>
+  <button id="stopButton">Stop Auto-Clicker</button>
+
+  <script>
+    document.getElementById("startButton").onclick = () => {
+      chrome.runtime.sendMessage({ action: "start", interval: 100 });
+    };
+
+    document.getElementById("stopButton").onclick = () => {
+      chrome.runtime.sendMessage({ action: "stop" });
+    };
+  </script>
+</body>
+</html>
